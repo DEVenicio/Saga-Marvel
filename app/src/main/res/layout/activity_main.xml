@@ -12,7 +12,7 @@
        android:id="@+id/toolbar"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:background="#BF2020"/>
+       android:background="#C11C1C"/>
 
    <fragment
        android:id="@+id/containerNavHost"

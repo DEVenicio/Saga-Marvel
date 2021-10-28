@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.venicio.sagamarvel.HomeFragment"
-        android:label="Saga Marvel Infinity"
+        android:name="com.venicio.sagamarvel.view.ui.HomeFragment"
+        android:label="Marvel Infinity Saga"
         tools:layout="@layout/fragment_home" />
 </navigation>
