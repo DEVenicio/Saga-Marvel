@@ -8,6 +8,6 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.venicio.sagamarvel.HomeFragment"
-        android:label="fragment_home"
+        android:label="Saga Marvel Infinity"
         tools:layout="@layout/fragment_home" />
 </navigation>

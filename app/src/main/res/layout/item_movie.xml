@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item_movie"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="#43FFFFFF"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_poster_movie"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/poster_marvel"
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_title_movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_poster_movie"
+                tools:text="Titulo do filme"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_date_movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tv_title_movie"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/tv_title_movie"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="00/00/0000" />
+
+                <TextView
+                    android:id="@+id/tv_gender_movie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Gender movie"
+                    android:layout_below="@id/tv_title_movie"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="3dp" />
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
