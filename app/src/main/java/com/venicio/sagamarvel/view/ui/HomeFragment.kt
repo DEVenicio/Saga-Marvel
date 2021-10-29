@@ -31,12 +31,10 @@ class HomeFragment : Fragment() {
         setupRecycler()
         setupObserver()
 
-
         return (binding.root)
     }
 
     private fun setupObserver() {
-        sViewModel.getAllMovies()
         sViewModel.allMovies.observe(viewLifecycleOwner, Observer {
             setupRecycler()
             recyclerAdapter.submitList(it)
@@ -51,7 +49,6 @@ class HomeFragment : Fragment() {
         recycler.setHasFixedSize(true)
         recyclerAdapter = SagaMarvelAdapter()
         recycler.adapter = recyclerAdapter
-
     }
 
 }

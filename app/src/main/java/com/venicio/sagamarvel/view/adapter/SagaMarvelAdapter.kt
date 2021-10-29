@@ -2,6 +2,7 @@ package com.venicio.sagamarvel.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.venicio.sagamarvel.data.model.Movies
 import com.venicio.sagamarvel.databinding.ItemMovieBinding
+import com.venicio.sagamarvel.view.ui.HomeFragmentDirections
 
 class SagaMarvelAdapter:
     ListAdapter<Movies, SagaMarvelAdapter.SagaMarvelViewHolder>
@@ -25,6 +27,7 @@ class SagaMarvelAdapter:
         holder.bindMovie(getItem(position))
     }
 
+
     class SagaMarvelViewHolder(
         private val binding: ItemMovieBinding
     ) : RecyclerView.ViewHolder(binding.root) {
@@ -38,6 +41,13 @@ class SagaMarvelAdapter:
                 .load(data.poster)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.ivPosterMovie)
+
+
+            binding.cvMovie.setOnClickListener {
+                val direction =
+                    HomeFragmentDirections.actionHomeFragmentToDetailsFragment(data)
+                binding.root.findNavController().navigate(direction)
+            }
         }
     }
 

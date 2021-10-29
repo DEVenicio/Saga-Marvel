@@ -9,5 +9,18 @@
         android:id="@+id/homeFragment"
         android:name="com.venicio.sagamarvel.view.ui.HomeFragment"
         android:label="Marvel Infinity Saga"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.venicio.sagamarvel.view.ui.DetailsFragment"
+        android:label="Detalhes do Filme"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="dataMovies"
+            app:argType="com.venicio.sagamarvel.data.model.Movies" />
+    </fragment>
 </navigation>

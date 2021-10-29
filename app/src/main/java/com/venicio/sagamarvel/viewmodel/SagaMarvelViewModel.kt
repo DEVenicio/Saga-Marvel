@@ -13,11 +13,15 @@ class SagaMarvelViewModel(
     private val rp: SagaMarvelRepository
 ) : ViewModel() {
 
-    private val _allMovies = MutableLiveData<List<Movies>>()
+        private val _allMovies = MutableLiveData<List<Movies>>()
     val allMovies: LiveData<List<Movies>>
         get() = _allMovies
 
-    fun getAllMovies() {
+    init {
+        getAllMovies()
+    }
+
+    private fun getAllMovies() {
         viewModelScope.launch {
             _allMovies.postValue(rp.getAllMovies())
         }

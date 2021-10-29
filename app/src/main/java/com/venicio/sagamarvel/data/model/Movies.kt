@@ -1,6 +1,11 @@
 package com.venicio.sagamarvel.data.model
 
-data class Movies(
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+
+@Parcelize
+ data class Movies(
     val actors: String,
     val director: String,
     val genre: String,
@@ -12,4 +17,4 @@ data class Movies(
     val title: String,
     val writer: String,
     val year: String
-)
+) : Parcelable
