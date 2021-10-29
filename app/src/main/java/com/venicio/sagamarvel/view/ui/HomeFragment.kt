@@ -1,12 +1,11 @@
 package com.venicio.sagamarvel.view.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.venicio.sagamarvel.data.model.Movies
+import androidx.navigation.fragment.findNavController
+import com.venicio.sagamarvel.R
 import com.venicio.sagamarvel.data.repository.SagaMarvelRepository
 import com.venicio.sagamarvel.databinding.FragmentHomeBinding
 import com.venicio.sagamarvel.view.adapter.SagaMarvelAdapter
@@ -28,6 +27,7 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
+        setHasOptionsMenu(true)
         setupRecycler()
         setupObserver()
 
@@ -49,6 +49,28 @@ class HomeFragment : Fragment() {
         recycler.setHasFixedSize(true)
         recyclerAdapter = SagaMarvelAdapter()
         recycler.adapter = recyclerAdapter
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+                inflater.inflate(R.menu.menu_marvel, menu)
+
+        var menuItem: MenuItem = menu.findItem(R.id.ic_search)
+        var search = menuItem.actionView
+
+
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val direction = HomeFragmentDirections.actionHomeFragmentToFavoriteFragment()
+
+        when(item.itemId) {
+            R.id.ic_favorite -> findNavController().navigate(direction)
+        }
+
+
+        return super.onOptionsItemSelected(item)
     }
 
 }

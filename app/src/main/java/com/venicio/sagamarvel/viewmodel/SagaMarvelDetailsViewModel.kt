@@ -21,4 +21,5 @@ class SagaMarvelDetailsViewModel(
     private fun getDataMovies() {
         _detailsMovies.value = arguments.dataMovies
     }
+
 }

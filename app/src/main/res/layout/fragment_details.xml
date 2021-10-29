@@ -40,7 +40,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@id/tv_title_movie_detail"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_plot_movie_detail"

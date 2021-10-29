@@ -1,14 +1,13 @@
 package com.venicio.sagamarvel.view.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.venicio.sagamarvel.R
 import com.venicio.sagamarvel.data.repository.SagaMarvelRepository
 import com.venicio.sagamarvel.databinding.FragmentDetailsBinding
 import com.venicio.sagamarvel.viewmodel.SagaMarvelDetailsViewModel
@@ -31,6 +30,7 @@ class DetailsFragment : Fragment() {
     ): View {
         binding = FragmentDetailsBinding.inflate(layoutInflater)
 
+        setHasOptionsMenu(true)
         showDetails()
 
         return (binding.root)
@@ -57,6 +57,11 @@ class DetailsFragment : Fragment() {
                 binding.tvInputPlotMovieDetail.text = args.dataMovies.plot
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_favorite, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
 }
