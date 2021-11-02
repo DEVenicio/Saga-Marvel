@@ -6,20 +6,22 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.venicio.sagamarvel.R
-import com.venicio.sagamarvel.data.repository.SagaMarvelRepository
+import com.venicio.sagamarvel.data.db.dao.MovieDao
+import com.venicio.sagamarvel.data.repository.MovieRepository
 import com.venicio.sagamarvel.databinding.FragmentHomeBinding
 import com.venicio.sagamarvel.view.adapter.SagaMarvelAdapter
 import com.venicio.sagamarvel.viewmodel.SagaMarvelViewModel
+import org.koin.android.ext.android.get
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class HomeFragment : Fragment() {
 
-     private lateinit var binding: FragmentHomeBinding
-     private lateinit var recyclerAdapter: SagaMarvelAdapter
-     private val sViewModel: SagaMarvelViewModel by viewModel {
-         parametersOf(SagaMarvelRepository())
-     }
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var recyclerAdapter: SagaMarvelAdapter
+    private val sViewModel: SagaMarvelViewModel by viewModel {
+        parametersOf(MovieRepository(get()))
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +37,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupObserver() {
-        sViewModel.allMovies.observe(viewLifecycleOwner, Observer {
+        sViewModel.moviesLiveData.observe(viewLifecycleOwner, Observer {
             setupRecycler()
             recyclerAdapter.submitList(it)
 
@@ -45,7 +47,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecycler() {
-       val recycler = binding.rvAllMovies
+        val recycler = binding.rvAllMovies
         recycler.setHasFixedSize(true)
         recyclerAdapter = SagaMarvelAdapter()
         recycler.adapter = recyclerAdapter
@@ -53,9 +55,9 @@ class HomeFragment : Fragment() {
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-                inflater.inflate(R.menu.menu_marvel, menu)
+        inflater.inflate(R.menu.menu_marvel, menu)
 
-        var menuItem: MenuItem = menu.findItem(R.id.ic_search)
+        val menuItem: MenuItem = menu.findItem(R.id.ic_search)
         var search = menuItem.actionView
 
 
@@ -65,11 +67,11 @@ class HomeFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val direction = HomeFragmentDirections.actionHomeFragmentToFavoriteFragment()
 
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.ic_favorite -> findNavController().navigate(direction)
+            R.id.ic_filter_name -> sViewModel.sortByName.observe(viewLifecycleOwner, {recyclerAdapter.submitList(it)})
+            R.id.ic_filter_year -> sViewModel.sortByYear.observe(viewLifecycleOwner, {recyclerAdapter.submitList(it)})
         }
-
-
         return super.onOptionsItemSelected(item)
     }
 

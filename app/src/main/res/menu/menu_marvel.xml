@@ -29,7 +29,7 @@
 
                 <menu>
                     <item
-                        android:id="@+id/ic_filter_a_z"
+                        android:id="@+id/ic_filter_name"
                         android:title="Name"
                         android:icon="@drawable/ic_sort_by_alpha"/>
 
