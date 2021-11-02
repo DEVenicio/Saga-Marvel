@@ -4,11 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.venicio.sagamarvel.data.db.dao.MovieDao
+import com.venicio.sagamarvel.data.db.model.FavoriteEntity
 import com.venicio.sagamarvel.data.model.Movies
 
+@TypeConverters
 @Database(
-    entities = [Movies::class],
+    entities = [Movies::class, FavoriteEntity::class],
     version = 1,
     exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {

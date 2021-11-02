@@ -6,6 +6,6 @@ import retrofit2.http.GET
 interface SagaMarvelService {
 
     @GET("saga")
-    suspend fun fetchAllMovies() : List<Movies>
+    suspend fun fetchAllMoviesApi() : List<Movies>
 
 }

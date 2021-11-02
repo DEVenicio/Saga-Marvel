@@ -12,7 +12,7 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel {(rp: MovieRepository) -> SagaMarvelViewModel(rp) }
-    viewModel { (arguments: DetailsFragmentArgs) -> SagaMarvelDetailsViewModel(arguments) }
+    viewModel { (rp: MovieRepository, args: DetailsFragmentArgs) -> SagaMarvelDetailsViewModel(rp, args) }
 }
 
 val repositoryModule = module {

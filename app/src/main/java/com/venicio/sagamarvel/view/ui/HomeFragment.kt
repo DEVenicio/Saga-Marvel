@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.venicio.sagamarvel.R
-import com.venicio.sagamarvel.data.db.dao.MovieDao
 import com.venicio.sagamarvel.data.repository.MovieRepository
 import com.venicio.sagamarvel.databinding.FragmentHomeBinding
 import com.venicio.sagamarvel.view.adapter.SagaMarvelAdapter
@@ -30,7 +29,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
         setHasOptionsMenu(true)
-        setupRecycler()
+        setupHomeRecycler()
         setupObserver()
 
         return (binding.root)
@@ -38,7 +37,7 @@ class HomeFragment : Fragment() {
 
     private fun setupObserver() {
         sViewModel.moviesLiveData.observe(viewLifecycleOwner, Observer {
-            setupRecycler()
+            setupHomeRecycler()
             recyclerAdapter.submitList(it)
 
             binding.progressBarHome.visibility = View.GONE
@@ -46,7 +45,7 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun setupRecycler() {
+    private fun setupHomeRecycler() {
         val recycler = binding.rvAllMovies
         recycler.setHasFixedSize(true)
         recyclerAdapter = SagaMarvelAdapter()

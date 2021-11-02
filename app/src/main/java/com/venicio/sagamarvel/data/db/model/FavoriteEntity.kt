@@ -1,14 +1,11 @@
-package com.venicio.sagamarvel.data.model
+package com.venicio.sagamarvel.data.db.model
 
-import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.parcelize.Parcelize
+import com.venicio.sagamarvel.data.model.Movies
 
-
-@Parcelize
-@Entity(tableName = "movie_table")
- data class Movies(
+@Entity(tableName = "table_favorites")
+data class FavoriteEntity(
 
     val actors: String,
     val director: String,
@@ -18,10 +15,8 @@ import kotlinx.parcelize.Parcelize
     val rated: String,
     val released: String,
     val runtime: String,
-    @PrimaryKey
+    @PrimaryKey()
     val title: String,
     val writer: String,
     val year: String
-) : Parcelable
-
-
+)

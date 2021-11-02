@@ -12,9 +12,6 @@ class SagaMarvelViewModel(
     private val repository: MovieRepository
 ) : ViewModel() {
 
-
-
-
     init {
         refreshDataFromRepository()
     }
@@ -26,7 +23,6 @@ class SagaMarvelViewModel(
             }
             catch (networkError: IOException) {
                 if (moviesLiveData.value.isNullOrEmpty())
-
                     networkError.message
             }
         }
@@ -36,6 +32,5 @@ class SagaMarvelViewModel(
 
     val sortByName = repository.filterName
     val sortByYear = repository.filterYear
-
 
 }
