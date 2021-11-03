@@ -1,9 +1,10 @@
 package com.venicio.sagamarvel.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.venicio.sagamarvel.data.model.Movies
 import com.venicio.sagamarvel.data.repository.MovieRepository
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import java.io.IOException
 

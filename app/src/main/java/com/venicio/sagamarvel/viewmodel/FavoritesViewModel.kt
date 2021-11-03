@@ -1,7 +1,6 @@
 package com.venicio.sagamarvel.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asFlow
 import androidx.lifecycle.viewModelScope
 import com.venicio.sagamarvel.data.db.model.FavoriteEntity
 import com.venicio.sagamarvel.data.repository.MovieRepository
@@ -24,6 +23,5 @@ class FavoritesViewModel(
              repository.removeFav(movieFav)
          }
     }
-
 
 }
