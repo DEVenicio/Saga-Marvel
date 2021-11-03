@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    android:id="@+id/container_toast"
+    android:background="@drawable/toast_removed"
+    android:padding="11dp">
+
+    <ImageView
+        android:id="@+id/iv_toast_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic__removed" />
+
+    <TextView
+        android:id="@+id/tv_toast_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Removed from favorites"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp" />
+
+
+</LinearLayout>

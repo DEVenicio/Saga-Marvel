@@ -3,6 +3,7 @@ package com.venicio.sagamarvel.data.model
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.venicio.sagamarvel.data.db.model.FavoriteEntity
 import kotlinx.parcelize.Parcelize
 
 
@@ -23,5 +24,11 @@ import kotlinx.parcelize.Parcelize
     val writer: String,
     val year: String
 ) : Parcelable
+
+ fun Movies.toFavoriteEntity (): FavoriteEntity {
+    return FavoriteEntity(
+       this.actors,this.director,this.genre,this.plot,this.poster,this.rated,this.released,this.runtime,this.title,this.writer,this.year
+    )
+ }
 
 

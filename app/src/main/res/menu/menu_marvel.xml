@@ -20,7 +20,7 @@
             <item
                 android:id="@+id/ic_favorite"
                 android:icon="@drawable/ic_favorite_star"
-                android:title="Favorite" />
+                android:title="@string/favorites" />
 
             <item
                 android:id="@+id/ic_filter"
@@ -36,7 +36,7 @@
                     <item
                         android:id="@+id/ic_filter_year"
                         android:title="Year"
-                        android:icon="@drawable/ic_alendar"/>
+                        android:icon="@drawable/ic_calendar"/>
                 </menu>
             </item>
 

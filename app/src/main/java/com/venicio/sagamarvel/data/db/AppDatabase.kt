@@ -9,7 +9,7 @@ import com.venicio.sagamarvel.data.db.dao.MovieDao
 import com.venicio.sagamarvel.data.db.model.FavoriteEntity
 import com.venicio.sagamarvel.data.model.Movies
 
-@TypeConverters
+
 @Database(
     entities = [Movies::class, FavoriteEntity::class],
     version = 1,

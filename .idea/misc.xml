@@ -3,12 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/drawable/container_border_movie.xml" value="0.1984375" />
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/drawable/ic_done.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/drawable/ic_favorite_added.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/drawable/toast_removed.xml" value="0.1984375" />
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/drawable/toast_success.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/layout/custom_toast.xml" value="0.33" />
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/layout/custom_toast_removed.xml" value="0.44000000000000006" />
         <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/layout/fragment_details.xml" value="0.268" />
         <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/layout/fragment_favorite.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/layout/item_movie.xml" value="0.3841166936790924" />
-        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/menu/menu_add_favorite.xml" value="0.3697916666666667" />
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/layout/item_movie.xml" value="0.3" />
+        <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/menu/menu_add_favorite.xml" value="0.22" />
         <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/menu/menu_favorite.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/Vinicius Almeida/AndroidStudioProjects/SagaMarvel/app/src/main/res/menu/menu_marvel.xml" value="0.18229166666666666" />
       </map>
